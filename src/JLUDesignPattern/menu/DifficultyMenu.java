@@ -24,7 +24,7 @@ public class DifficultyMenu extends ConsoleMenu {
             // (to be done)
         }
         if (choice >= 0 && choice <= 5)
-            MenuMgr.menuMgr.setActivedMenu(NEW_MENU);
+            MenuMgr.getInstance().setActivedMenu(NEW_MENU);
         return true;
     }
 }

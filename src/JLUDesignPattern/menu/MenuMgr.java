@@ -5,9 +5,11 @@ import java.util.Vector;
 import static JLUDesignPattern.menu.MenuType.MAIN_MENU;
 
 public class MenuMgr {
-    public static MenuMgr menuMgr = new MenuMgr();
+    private static final MenuMgr instance=new MenuMgr();
+    public static MenuMgr getInstance() {return instance;}
 
-    public MenuMgr() {//TODO: check enum
+    private Vector<Menu> mVctMenus = new Vector<>();
+    private MenuMgr() {
         mVctMenus.add(new MainMenu());
         mVctMenus.add(new NewMenu());
         mVctMenus.add(new LoadMenu());
@@ -27,10 +29,9 @@ public class MenuMgr {
         return mCurMenu;
     }//const
 
+    private Menu mCurMenu = null; // 当前菜单
     public void setActivedMenu(MenuType menuType) {
         mCurMenu = mVctMenus.get(menuType.ordinal());
     }
 
-    private Menu mCurMenu = null; // 当前菜单
-    private Vector<Menu> mVctMenus = new Vector<>();
 };

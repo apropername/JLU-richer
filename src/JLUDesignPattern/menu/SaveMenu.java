@@ -23,7 +23,7 @@ public class SaveMenu extends ConsoleMenu {
             // (to be done)
 
             //直接继续游戏
-            MenuMgr.menuMgr.setActivedMenu(PLAY_MENU);
+            MenuMgr.getInstance().setActivedMenu(PLAY_MENU);
         }
         return true;
     }

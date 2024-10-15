@@ -19,11 +19,11 @@ public class NewMenu extends ConsoleMenu {
     protected boolean doAction(int choice) {
 
         if (choice == 1) {
-            MenuMgr.menuMgr.setActivedMenu(PLAYER_COUNT_MENU);
+            MenuMgr.getInstance().setActivedMenu(PLAYER_COUNT_MENU);
         } else if (choice == 2) {
-            MenuMgr.menuMgr.setActivedMenu(DIFFICULTY_MENU);
+            MenuMgr.getInstance().setActivedMenu(DIFFICULTY_MENU);
         } else if (choice == 0) {
-            MenuMgr.menuMgr.setActivedMenu(PLAY_MENU);
+            MenuMgr.getInstance().setActivedMenu(PLAY_MENU);
         }
         return true;
     }

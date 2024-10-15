@@ -15,11 +15,11 @@ public class PlayMenu extends ConsoleMenu {
     @Override
     protected boolean doAction(int choice) {
         if (choice == 0) {
-            MenuMgr.menuMgr.setActivedMenu(PAUSE_MENU);
+            MenuMgr.getInstance().setActivedMenu(PAUSE_MENU);
         } else if (choice == 1) {
             //玩家前进
 // (to be done)
-            MenuMgr.menuMgr.setActivedMenu(PLAY_MENU);
+            MenuMgr.getInstance().setActivedMenu(PLAY_MENU);
         }
         return true;
     }

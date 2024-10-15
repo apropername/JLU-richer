@@ -1,7 +1,7 @@
 package JLUDesignPattern;
 
 import JLUDesignPattern.menu.Menu;
-import static JLUDesignPattern.menu.MenuMgr.menuMgr;//TODO:限制性更强
+import JLUDesignPattern.menu.MenuMgr;
 
 public class App {
     public void init() {
@@ -10,7 +10,7 @@ public class App {
     public void run() {
         boolean running = true;
         while (running) {
-            Menu pMenu = menuMgr.activedMenu();
+            Menu pMenu = MenuMgr.getInstance().activedMenu();
             running = pMenu.process();
         }
     }

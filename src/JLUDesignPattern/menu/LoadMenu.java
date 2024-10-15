@@ -18,7 +18,7 @@ public class LoadMenu extends ConsoleMenu {
 
     @Override
     protected boolean doAction(int choice) {
-        MenuMgr.menuMgr.setActivedMenu(PLAY_MENU);
+        MenuMgr.getInstance().setActivedMenu(PLAY_MENU);
         return true;
     }
 }

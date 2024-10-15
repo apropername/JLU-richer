@@ -21,7 +21,7 @@ public class MusicMenu extends ConsoleMenu {
         } else if (choice == 2) {
             //处理关闭音乐
         }
-        MenuMgr.menuMgr.setActivedMenu(OPTION_MENU);
+        MenuMgr.getInstance().setActivedMenu(OPTION_MENU);
         return true;
     }
 }

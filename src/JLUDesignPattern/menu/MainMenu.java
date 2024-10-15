@@ -25,11 +25,11 @@ public class MainMenu extends ConsoleMenu {
         if (choice == 0) {
             return false;
         } else if (choice == 1) {
-            MenuMgr.menuMgr.setActivedMenu(NEW_MENU);
+            MenuMgr.getInstance().setActivedMenu(NEW_MENU);
         } else if (choice == 2) {
-            MenuMgr.menuMgr.setActivedMenu(LOAD_MENU);
+            MenuMgr.getInstance().setActivedMenu(LOAD_MENU);
         } else if (choice == 3) {
-            MenuMgr.menuMgr.setActivedMenu(OPTION_MENU);
+            MenuMgr.getInstance().setActivedMenu(OPTION_MENU);
         }
         return true;
     }

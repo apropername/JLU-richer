@@ -18,11 +18,11 @@ public class PauseMenu extends ConsoleMenu {
     @Override
     protected boolean doAction(int choice) {
         if (choice == 1) {
-            MenuMgr.menuMgr.setActivedMenu(SAVE_MENU);
+            MenuMgr.getInstance().setActivedMenu(SAVE_MENU);
         } else if (choice == 2) {
-            MenuMgr.menuMgr.setActivedMenu(MAIN_MENU);
+            MenuMgr.getInstance().setActivedMenu(MAIN_MENU);
         } else {
-            MenuMgr.menuMgr.setActivedMenu(PLAY_MENU);
+            MenuMgr.getInstance().setActivedMenu(PLAY_MENU);
         }
         return true;
     }

@@ -18,11 +18,11 @@ public class OptionMenu extends ConsoleMenu {
     @Override
     protected boolean doAction(int choice) {
         if (choice == 1) {
-            MenuMgr.menuMgr.setActivedMenu(ANIMATE_MENU);
+            MenuMgr.getInstance().setActivedMenu(ANIMATE_MENU);
         } else if (choice == 2) {
-            MenuMgr.menuMgr.setActivedMenu(MUSIC_MENU);
+            MenuMgr.getInstance().setActivedMenu(MUSIC_MENU);
         } else if (choice == 0) {
-            MenuMgr.menuMgr.setActivedMenu(MAIN_MENU);
+            MenuMgr.getInstance().setActivedMenu(MAIN_MENU);
         }
         return true;
     }
