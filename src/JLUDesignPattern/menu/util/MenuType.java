@@ -1,4 +1,4 @@
-package JLUDesignPattern.menu;
+package JLUDesignPattern.menu.util;
 
 public enum MenuType {
         MAIN_MENU,

@@ -1,7 +1,7 @@
 package JLUDesignPattern;
 
 import JLUDesignPattern.menu.Menu;
-import JLUDesignPattern.menu.MenuMgr;
+import JLUDesignPattern.menu.util.MenuMgr;
 
 public class App {
     public void init() {

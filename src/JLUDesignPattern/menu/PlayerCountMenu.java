@@ -1,6 +1,8 @@
 package JLUDesignPattern.menu;
 
-import static JLUDesignPattern.menu.MenuType.NEW_MENU;
+import JLUDesignPattern.menu.util.MenuMgr;
+
+import static JLUDesignPattern.menu.util.MenuType.NEW_MENU;
 
 public class PlayerCountMenu extends ConsoleMenu {
     @Override

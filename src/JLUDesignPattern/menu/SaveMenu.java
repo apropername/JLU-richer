@@ -1,7 +1,9 @@
 package JLUDesignPattern.menu;
 
 
-import static JLUDesignPattern.menu.MenuType.PLAY_MENU;
+import JLUDesignPattern.menu.util.MenuMgr;
+
+import static JLUDesignPattern.menu.util.MenuType.PLAY_MENU;
 
 public class SaveMenu extends ConsoleMenu {
     @Override

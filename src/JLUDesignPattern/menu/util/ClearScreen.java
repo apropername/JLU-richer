@@ -1,6 +1,6 @@
-package JLUDesignPattern.menu;
+package JLUDesignPattern.menu.util;
 
-class ClearScreen {
+public class ClearScreen {
     private ClearScreen() {
         throw new UnsupportedOperationException("Cannot instantiate ClearScreen");
     }

@@ -1,6 +1,8 @@
 package JLUDesignPattern.menu;
 
-import static JLUDesignPattern.menu.MenuType.*;
+import JLUDesignPattern.menu.util.MenuMgr;
+
+import static JLUDesignPattern.menu.util.MenuType.*;
 
 public class PauseMenu extends ConsoleMenu {
     @Override

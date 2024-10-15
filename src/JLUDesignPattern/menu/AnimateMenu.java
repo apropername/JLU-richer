@@ -1,6 +1,8 @@
 package JLUDesignPattern.menu;
 
-import static JLUDesignPattern.menu.MenuType.OPTION_MENU;
+import JLUDesignPattern.menu.util.MenuMgr;
+
+import static JLUDesignPattern.menu.util.MenuType.OPTION_MENU;
 
 public class AnimateMenu extends ConsoleMenu {
     @Override

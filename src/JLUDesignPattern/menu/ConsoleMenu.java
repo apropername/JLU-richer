@@ -2,7 +2,7 @@ package JLUDesignPattern.menu;
 
 import java.io.*;
 
-import static JLUDesignPattern.menu.ClearScreen.clearScreen;
+import static JLUDesignPattern.menu.util.ClearScreen.clearScreen;
 
 
 abstract class ConsoleMenu implements Menu {

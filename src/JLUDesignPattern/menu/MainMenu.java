@@ -1,7 +1,8 @@
 package JLUDesignPattern.menu;
 
-import static JLUDesignPattern.menu.ClearScreen.clearScreen;
-import static JLUDesignPattern.menu.MenuType.*;
+import JLUDesignPattern.menu.util.MenuMgr;
+
+import static JLUDesignPattern.menu.util.MenuType.*;
 
 public class MainMenu extends ConsoleMenu {
     @Override
