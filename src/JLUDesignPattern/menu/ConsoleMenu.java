@@ -1,5 +1,7 @@
 package JLUDesignPattern.menu;
 
+import JLUDesignPattern.map.util.MapMgr;
+
 import java.io.*;
 
 import static JLUDesignPattern.menu.util.ClearScreen.clearScreen;
@@ -18,7 +20,7 @@ abstract class ConsoleMenu implements Menu {
         }
     }
     protected abstract boolean doAction(int choice);
-    protected abstract void display();//const
+    protected abstract void display();
 
     protected int selectMenuItem() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

@@ -15,7 +15,7 @@ public class MenuMgr {
     private MenuMgr() {
 
         for(MenuType menuType : MenuType.values()) {
-            mMapMenus.put(menuType,MenuFactoryImpl.INSTANCE.createMenu(menuType));
+            mMapMenus.put(menuType,MenuFactory.INSTANCE.createMenu(menuType));
         }
 
         setActivedMenu(MAIN_MENU);

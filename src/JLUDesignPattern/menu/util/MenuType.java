@@ -1,5 +1,7 @@
 package JLUDesignPattern.menu.util;
 
+import JLUDesignPattern.block.util.BlockType;
+
 public enum MenuType {
         MAIN_MENU,
         NEW_MENU,
@@ -11,5 +13,6 @@ public enum MenuType {
         ANIMATE_MENU,
         MUSIC_MENU,
         PLAYER_COUNT_MENU,
-        DIFFICULTY_MENU
+        DIFFICULTY_MENU;
+        public static final int TOTAL_COUNT= MenuType.values().length;
 }

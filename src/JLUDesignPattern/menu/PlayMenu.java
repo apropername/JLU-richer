@@ -1,15 +1,19 @@
 package JLUDesignPattern.menu;
 
 
+import JLUDesignPattern.map.util.MapMgr;
 import JLUDesignPattern.menu.util.MenuMgr;
 
+import static JLUDesignPattern.menu.util.ClearScreen.clearScreen;
 import static JLUDesignPattern.menu.util.MenuType.*;
 
 public class PlayMenu extends ConsoleMenu {
     @Override
     protected void display() {
-        //显示界面
-        // (to be done)
+        clearScreen();
+        // 显示界面
+        MapMgr.INSTANCE.activedMap().show( );
+        // 显示菜单
         System.out.println();
         System.out.print("\t1.前进  0.暂停 \t请选择(0-1):");
     }
