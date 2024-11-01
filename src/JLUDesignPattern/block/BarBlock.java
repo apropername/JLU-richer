@@ -2,7 +2,7 @@ package JLUDesignPattern.block;
 
 public class BarBlock extends Block {
     @Override
-    public void draw() {
+    public void drawText(){
         System.out.print(" D ");
     }
 }

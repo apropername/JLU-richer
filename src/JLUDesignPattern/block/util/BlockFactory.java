@@ -13,7 +13,7 @@ public enum BlockFactory implements IBlockFactory {
             case BAR_BLOCK -> new BarBlock();
             case null, default -> {
                 assert false;
-                yield null;//TODO :return switch & yield ?
+                yield null;//TODO :semantic : return switch & yield ?
             }
         };
     }

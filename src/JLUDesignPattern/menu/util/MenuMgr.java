@@ -14,7 +14,7 @@ public class MenuMgr {
     private final Map<MenuType, Menu> mMapMenus = new EnumMap<>(MenuType.class);
     private MenuMgr() {
 
-        for(MenuType menuType : MenuType.values()) {
+        for(MenuType menuType : MenuType.values()) {//todo:其实当前放在构造函数中 并不合理
             mMapMenus.put(menuType,MenuFactory.INSTANCE.createMenu(menuType));
         }
 
