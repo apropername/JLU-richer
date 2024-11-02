@@ -1,6 +1,7 @@
 package JLUDesignPattern.menu;
 
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.menu.util.MenuMgr;
 
 import static JLUDesignPattern.menu.util.MenuType.PLAY_MENU;
@@ -8,14 +9,11 @@ import static JLUDesignPattern.menu.util.MenuType.PLAY_MENU;
 public class SaveMenu extends ConsoleMenu {
     @Override
     protected void display() {
-        System.out.println();
-        System.out.println("\t 保存进度菜单");
-        System.out.println();
-        System.out.println("\t1.xxxx");
-        System.out.println("\t2.xxxx");
-        System.out.println("\t3.xxx");
-        System.out.println();
-        System.out.println("\t请选择(1-3):");
+        IO.println("\n\t 保存进度菜单\n");
+        IO.println("\t1.xxxx");
+        IO.println("\t2.xxxx");
+        IO.println("\t3.xxx\n");
+        IO.print("\t请选择(1-3):");
     }
 
     @Override

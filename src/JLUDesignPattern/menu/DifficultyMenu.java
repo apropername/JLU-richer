@@ -1,5 +1,6 @@
 package JLUDesignPattern.menu;
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.menu.util.MenuMgr;
 
 import static JLUDesignPattern.menu.util.MenuType.NEW_MENU;
@@ -8,15 +9,13 @@ public class DifficultyMenu extends ConsoleMenu {
     @Override
     protected void display() {
         // 打印菜单
-        System.out.println();
-        System.out.println("\t 难度等级菜单");
-        System.out.println("\t1.菜鸟");
-        System.out.println("\t2.普通");
-        System.out.println("\t3.困难");
-        System.out.println("\t4.骨灰");
-        System.out.println("\t0.返回");
-        System.out.println();
-        System.out.print("\t请选择(0-4): ");
+        IO.println("\n\t 难度等级菜单\n");
+        IO.println("\t1.菜鸟");
+        IO.println("\t2.普通");
+        IO.println("\t3.困难");
+        IO.println("\t4.骨灰");
+        IO.println("\t0.返回\n");
+        IO.print("\t请选择(0-4): ");
     }
 
     @Override

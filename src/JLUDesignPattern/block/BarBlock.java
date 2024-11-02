@@ -1,5 +1,6 @@
 package JLUDesignPattern.block;
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.Player.Player;
 
 public class BarBlock extends Block {
@@ -7,7 +8,7 @@ public class BarBlock extends Block {
     public boolean enterBy(Player player) {
         return false; //被阻拦，停止移动
     }
-
+    
     /*@Override
     public Block clone() {
         return null;
@@ -15,6 +16,6 @@ public class BarBlock extends Block {
 
     @Override
     protected void drawText(){
-        System.out.print(" D ");
+        IO.print(" D ");
     }
 }

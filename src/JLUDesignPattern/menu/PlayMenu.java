@@ -1,6 +1,7 @@
 package JLUDesignPattern.menu;
 
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.Player.Player;
 import JLUDesignPattern.Player.util.PlayerMgr;
 import JLUDesignPattern.map.util.MapMgr;
@@ -17,8 +18,7 @@ public class PlayMenu extends ConsoleMenu {
         // 显示界面
         MapMgr.INSTANCE.activedMap().show( );
         // 显示菜单
-        System.out.println();
-        System.out.print("\t1.前进  0.暂停 \t请选择(0-1):");
+        IO.print("\n\t1.前进  0.暂停 \t请选择(0-1):");
     }
 
     @Override

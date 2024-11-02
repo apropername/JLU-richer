@@ -1,5 +1,7 @@
 package JLUDesignPattern.menu;
 
+import JLUDesignPattern.IO;
+
 import java.io.*;
 
 import static JLUDesignPattern.ClearScreen.clearScreen;
@@ -7,8 +9,8 @@ import static JLUDesignPattern.ClearScreen.clearScreen;
 
 abstract class ConsoleMenu extends Menu {
     @Override
-    public boolean process() {
-        clearScreen();
+    final public boolean process() {
+        IO.cls();//与文档不同，将此重复语句抽出，导致要求子类不得覆写
         display();
         try {
             int choice = selectMenuItem();
@@ -21,25 +23,7 @@ abstract class ConsoleMenu extends Menu {
     protected abstract void display();
 
     protected int selectMenuItem() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int digital = -1;
-
-        // 读取用户输入直到满足条件
-        while (digital < 0 || digital > 9) {
-            String input = reader.readLine();
-
-            // 确保输入有效并且是一个数字
-            if (input != null && !input.isEmpty()) {
-                try {
-                    digital = Integer.parseInt(input);
-                } catch (NumberFormatException e) {
-                    digital = -1;
-                }
-            }
-        }
-
-        System.out.print(digital);
-        return digital;
+        return IO.readDigital();
     }
 
 }

@@ -1,5 +1,6 @@
 package JLUDesignPattern.menu;
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.menu.util.MenuMgr;
 
 import static JLUDesignPattern.menu.util.MenuType.*;
@@ -7,14 +8,11 @@ import static JLUDesignPattern.menu.util.MenuType.*;
 public class OptionMenu extends ConsoleMenu {
     @Override
     protected void display() {
-        System.out.println();
-        System.out.println("\t 选项菜单");
-        System.out.println();
-        System.out.println("\t1.动画开关");
-        System.out.println("\t2.音乐开关");
-        System.out.println("\t0.回主菜单");
-        System.out.println();
-        System.out.println("\t请选择(0-2):");
+        IO.println("\n\t 选项菜单\n");
+        IO.println("\t1.动画开关");
+        IO.println("\t2.音乐开关");
+        IO.println("\t0.回主菜单\n");
+        IO.print("\t请选择(0-2):");
     }
 
     @Override

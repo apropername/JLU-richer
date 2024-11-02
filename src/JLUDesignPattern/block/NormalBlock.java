@@ -1,5 +1,6 @@
 package JLUDesignPattern.block;
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.Player.Player;
 
 public class NormalBlock extends Block {
@@ -17,6 +18,6 @@ public class NormalBlock extends Block {
 
     @Override
     protected void drawText() {
-        System.out.print(" A ");
+        IO.print(" A ");
     }
 }

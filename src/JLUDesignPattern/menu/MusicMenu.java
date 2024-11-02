@@ -1,4 +1,5 @@
 package JLUDesignPattern.menu;
+import JLUDesignPattern.IO;
 import JLUDesignPattern.menu.util.MenuMgr;
 
 import static JLUDesignPattern.menu.util.MenuType.OPTION_MENU;
@@ -6,13 +7,10 @@ import static JLUDesignPattern.menu.util.MenuType.OPTION_MENU;
 public class MusicMenu extends ConsoleMenu {
     @Override
     protected void display() {
-        System.out.println();
-        System.out.println("\t 音乐菜单");
-        System.out.println();
-        System.out.println("\t1.开");
-        System.out.println("\t2.关");
-        System.out.println();
-        System.out.println("\t请选择(1-2):");
+        IO.println("\n\t 音乐菜单\n");
+        IO.println("\t1.开");
+        IO.println("\t2.关\n");
+        IO.print("\t请选择(1-2):");
 
     }
 

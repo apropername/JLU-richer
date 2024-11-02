@@ -1,6 +1,7 @@
 package JLUDesignPattern.block;
 
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.Player.Player;
 
 public class TripBlock extends Block {
@@ -17,6 +18,6 @@ public class TripBlock extends Block {
 
     @Override
     protected void drawText(){
-        System.out.print(" C ");
+        IO.print(" C ");
     }
 }

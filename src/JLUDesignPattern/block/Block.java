@@ -1,5 +1,6 @@
 package JLUDesignPattern.block;
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.Player.util.Dir;
 import JLUDesignPattern.Player.Player;
 import JLUDesignPattern.Player.util.PlayerMgr;
@@ -13,13 +14,13 @@ public abstract class Block implements IBlock, IClonableBlock {
     public int getY( )  { return mY; }
     public void setXY( int x, int y ) { mX = x; mY = y; }
     @Override
-    public void draw() {
+    final public void draw() {//final标识与文档差异
         Player player = PlayerMgr.getInstance().findPlayerOnBlock( this );
         if( player==null ) { drawText();}// 无Player站
         else { //不同Player，显示不同的字符标记
-            System.out.print(player.flagChar( LEFT ));
+            IO.print(player.flagChar( LEFT ));
             drawText();
-            System.out.print(player.flagChar( RIGHT ));
+            IO.print(player.flagChar( RIGHT ));
         }
     }
 /*    @Override

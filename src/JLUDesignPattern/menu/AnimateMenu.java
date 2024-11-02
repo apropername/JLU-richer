@@ -1,5 +1,6 @@
 package JLUDesignPattern.menu;
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.menu.util.MenuMgr;
 
 import static JLUDesignPattern.menu.util.MenuType.OPTION_MENU;
@@ -7,13 +8,10 @@ import static JLUDesignPattern.menu.util.MenuType.OPTION_MENU;
 public class AnimateMenu extends ConsoleMenu {
     @Override
     protected void display() {//const
-        System.out.println();
-        System.out.println("\t 动画菜单");
-        System.out.println();
-        System.out.println("\t1.开");
-        System.out.println("\t2.关");
-        System.out.println();
-        System.out.println("\t请选择(1-2):");
+        IO.println("\n\t 动画菜单\n");
+        IO.println("\t1.开");
+        IO.println("\t2.关\n");
+        IO.print("\t请选择(1-2):");
     }
 
     @Override
@@ -23,7 +21,7 @@ public class AnimateMenu extends ConsoleMenu {
         } else if (choice == 2) {
             //处理关闭动画
         }
-        MenuMgr.getInstance().setActivedMenu(OPTION_MENU);//TODO:思考能否抽象,不过这几乎已经就是 给了个参数而已
+        MenuMgr.getInstance().setActivedMenu(OPTION_MENU);
         return true;
     }
 

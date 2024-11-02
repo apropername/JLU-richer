@@ -1,5 +1,6 @@
 package JLUDesignPattern.menu;
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.menu.util.MenuMgr;
 
 import static JLUDesignPattern.menu.util.MenuType.PLAY_MENU;
@@ -7,19 +8,17 @@ import static JLUDesignPattern.menu.util.MenuType.PLAY_MENU;
 public class LoadMenu extends ConsoleMenu {
     @Override
     protected void display() {//const
-        System.out.println();
-        System.out.println("\t 载入进度菜单");
-        System.out.println();
-        System.out.println("\t1.xxxx");
-        System.out.println("\t2.xxxx");
-        System.out.println("\t3.xxx");
-        System.out.println("\t0.返回游戏");
-        System.out.println();
-        System.out.println("\t请选择(0-3):");
+        IO.println("\n\t 载入进度菜单\n");
+        IO.println("\t1.xxxx");
+        IO.println("\t2.xxxx");
+        IO.println("\t3.xxx");
+        IO.println("\t0.返回游戏\n");
+        IO.print("\t请选择(0-3):");
     }
 
     @Override
     protected boolean doAction(int choice) {
+        //暂时，全部继续游戏
         MenuMgr.getInstance().setActivedMenu(PLAY_MENU);
         return true;
     }

@@ -1,5 +1,7 @@
 package JLUDesignPattern.menu;
 
+import JLUDesignPattern.IO;
+import JLUDesignPattern.Player.util.PlayerMgr;
 import JLUDesignPattern.menu.util.MenuMgr;
 
 import static JLUDesignPattern.menu.util.MenuType.*;
@@ -7,14 +9,11 @@ import static JLUDesignPattern.menu.util.MenuType.*;
 public class NewMenu extends ConsoleMenu {
     @Override
     protected void display() {
-        System.out.println();
-        System.out.println("\t 开始菜单");
-        System.out.println();
-        System.out.println("\t1.玩家数量");
-        System.out.println("\t2.难度等级");
-        System.out.println("\t0.开始游戏");
-        System.out.println();
-        System.out.println("\t请选择(0-2):");
+        IO.println("\n\t 开始菜单");
+        IO.println("\n\t1.玩家数量");
+        IO.println("\t2.难度等级");
+        IO.println("\t0.开始游戏\n");
+        IO.print("\t请选择(0-2):");
     }
 
     @Override
@@ -25,6 +24,8 @@ public class NewMenu extends ConsoleMenu {
         } else if (choice == 2) {
             MenuMgr.getInstance().setActivedMenu(DIFFICULTY_MENU);
         } else if (choice == 0) {
+            // 开始游戏
+            PlayerMgr.getInstance( ).startRound( );
             MenuMgr.getInstance().setActivedMenu(PLAY_MENU);
         }
         return true;

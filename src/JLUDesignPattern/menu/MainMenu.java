@@ -1,5 +1,6 @@
 package JLUDesignPattern.menu;
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.menu.util.MenuMgr;
 
 import static JLUDesignPattern.menu.util.MenuType.*;
@@ -8,15 +9,13 @@ public class MainMenu extends ConsoleMenu {
     @Override
     protected void display() {
         // 打印菜单
-        System.out.println();
-        System.out.println("\t 主菜单");
-        System.out.println("\t--------");
-        System.out.println("\t1.新的游戏");
-        System.out.println("\t2.载入游戏");
-        System.out.println("\t3.选 项");
-        System.out.println("\t0.退 出");
-        System.out.println();
-        System.out.print("\t请选择(0-3): ");
+        IO.println("\n\t 主菜单");
+        IO.println("\t--------");
+        IO.println("\t1.新的游戏");
+        IO.println("\t2.载入游戏");
+        IO.println("\t3.选 项");
+        IO.println("\t0.退 出\n");
+        IO.print("\t请选择(0-3): ");
     }
 
 

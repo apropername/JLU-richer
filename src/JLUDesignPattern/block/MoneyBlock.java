@@ -1,6 +1,7 @@
 package JLUDesignPattern.block;
 
 
+import JLUDesignPattern.IO;
 import JLUDesignPattern.Player.Player;
 
 public class MoneyBlock extends Block {
@@ -16,6 +17,6 @@ public class MoneyBlock extends Block {
 
     @Override
     protected void drawText() {
-        System.out.print(" B ");
+        IO.print(" B ");
     }
 }
