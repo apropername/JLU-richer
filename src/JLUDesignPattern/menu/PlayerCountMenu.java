@@ -1,5 +1,6 @@
 package JLUDesignPattern.menu;
 
+import JLUDesignPattern.Player.util.PlayerMgr;
 import JLUDesignPattern.menu.util.MenuMgr;
 
 import static JLUDesignPattern.menu.util.MenuType.NEW_MENU;
@@ -24,7 +25,7 @@ public class PlayerCountMenu extends ConsoleMenu {
     protected boolean doAction(int choice) {
         if (choice >= 1 && choice <= 5) {
             //记录玩家数量
-// (to be done)
+            PlayerMgr.getInstance().resetPlayers(choice);
         }
         if (choice >= 0 && choice <= 5)
             MenuMgr.getInstance().setActivedMenu(NEW_MENU);

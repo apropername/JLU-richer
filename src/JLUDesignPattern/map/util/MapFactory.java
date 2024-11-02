@@ -2,13 +2,12 @@ package JLUDesignPattern.map.util;
 
 import static JLUDesignPattern.block.util.BlockType.*;
 
-import JLUDesignPattern.Player.Dir;
+import JLUDesignPattern.Player.util.Dir;
 import JLUDesignPattern.block.Block;
 import JLUDesignPattern.block.util.BlockType;
 import JLUDesignPattern.block.util.IBlockFactory;
 import JLUDesignPattern.map.Map;
 
-import java.util.Arrays;
 import java.util.List;
 
 public enum MapFactory implements IMapFactory {

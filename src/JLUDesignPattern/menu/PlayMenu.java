@@ -1,10 +1,13 @@
 package JLUDesignPattern.menu;
 
 
+import JLUDesignPattern.Player.Player;
+import JLUDesignPattern.Player.util.PlayerMgr;
 import JLUDesignPattern.map.util.MapMgr;
 import JLUDesignPattern.menu.util.MenuMgr;
+import JLUDesignPattern.menu.util.MenuType;
 
-import static JLUDesignPattern.menu.util.ClearScreen.clearScreen;
+import static JLUDesignPattern.ClearScreen.clearScreen;
 import static JLUDesignPattern.menu.util.MenuType.*;
 
 public class PlayMenu extends ConsoleMenu {
@@ -23,9 +26,14 @@ public class PlayMenu extends ConsoleMenu {
         if (choice == 0) {
             MenuMgr.getInstance().setActivedMenu(PAUSE_MENU);
         } else if (choice == 1) {
-            //玩家前进
-// (to be done)
-            MenuMgr.getInstance().setActivedMenu(PLAY_MENU);
+            Player player = PlayerMgr.getInstance( ).getActivePlayer( );
+            player.forceAdvance( ); //强制UserPlayer前进
+            //设置下一个为AcivePlayer
+            PlayerMgr.getInstance( ).nextPlayer( );
+            //继续开始新一轮前进
+            PlayerMgr.getInstance( ).startRound();
+
+            MenuMgr.getInstance( ).setActivedMenu( MenuType.PLAY_MENU );
         }
         return true;
     }

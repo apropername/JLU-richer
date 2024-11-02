@@ -1,5 +1,6 @@
 package JLUDesignPattern.menu;
 
-public interface Menu {
-    boolean process();
+public abstract class Menu implements IMenu {
+    @Override
+    abstract public boolean process();
 }

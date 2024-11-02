@@ -1,13 +1,11 @@
 package JLUDesignPattern.menu;
 
-import JLUDesignPattern.map.util.MapMgr;
-
 import java.io.*;
 
-import static JLUDesignPattern.menu.util.ClearScreen.clearScreen;
+import static JLUDesignPattern.ClearScreen.clearScreen;
 
 
-abstract class ConsoleMenu implements Menu {
+abstract class ConsoleMenu extends Menu {
     @Override
     public boolean process() {
         clearScreen();

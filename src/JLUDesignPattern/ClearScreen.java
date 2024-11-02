@@ -1,4 +1,4 @@
-package JLUDesignPattern.menu.util;
+package JLUDesignPattern;
 
 public class ClearScreen {
     private ClearScreen() {

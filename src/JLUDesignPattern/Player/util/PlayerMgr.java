@@ -1,10 +1,12 @@
-package JLUDesignPattern.Player;
+package JLUDesignPattern.Player.util;
 
+import JLUDesignPattern.Player.AutoPlayer;
+import JLUDesignPattern.Player.Player;
+import JLUDesignPattern.Player.UserPlayer;
 import JLUDesignPattern.block.Block;
 import JLUDesignPattern.map.util.MapMgr;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public enum PlayerMgr {
     INSTANCE;
@@ -38,9 +40,9 @@ public enum PlayerMgr {
     }
     // getters/setters
     public ArrayList<Player>  getAllPlayers( )  { return mPlayers; }
-    void  addPlayer( Player p ) { mPlayers.add(p); }
-    Player getActivePlayer( )  { return mActivePlayer; }
-    void   setActivePlayer( Player player ) { mActivePlayer = player; }
+    public void  addPlayer( Player p ) { mPlayers.add(p); }
+    public Player getActivePlayer( )  { return mActivePlayer; }
+    public void   setActivePlayer( Player player ) { mActivePlayer = player; }
     
     // 激活下一个
     public Player nextPlayer( ){
@@ -49,7 +51,7 @@ public enum PlayerMgr {
         while ( it.hasNext() ) {
             Player curPlayer=it.next();
             if(curPlayer==mActivePlayer) {
-                if ( (curPlayer) != mPlayers.getLast() ) {
+                if (it.hasNext() ) {
                     //下一个Player
                     setActivePlayer(it.next());
                 } else {
@@ -70,6 +72,15 @@ public enum PlayerMgr {
         }
         return found;
     }
+    public void    startRound( ) {
+        // 一直前进，直到遇到下一个UserPlayer
+        boolean goon = mActivePlayer.advance( );;
+        while ( goon ) {
+            nextPlayer( );
+            goon = mActivePlayer.advance(  );
+        }
+    }
+
 
 //    protected PlayerMgr( ) = default;
     
