@@ -7,4 +7,3 @@ public enum BlockType {
     BAR_BLOCK;
     public static final int TOTAL_COUNT=BlockType.values().length;
 }
-//TODO: TOTAL_COUNT = Type::BAR_BLOCK + 1

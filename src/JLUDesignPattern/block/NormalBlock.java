@@ -9,12 +9,7 @@ public class NormalBlock extends Block {
         return true; //可继续移动
     }
 
-/*
-    @Override
-    public Block clone() {
-        return null;
-    }
-*/
+
 
     @Override
     protected char content() {

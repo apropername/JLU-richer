@@ -2,6 +2,8 @@ package JLUDesignPattern;
 
 import JLUDesignPattern.Player.util.PlayerMgr;
 import JLUDesignPattern.block.util.BlockFactory;
+import JLUDesignPattern.block.util.BlockProtoFactory;
+import JLUDesignPattern.block.util.IBlockFactory;
 import JLUDesignPattern.map.util.MapFactory;
 import JLUDesignPattern.map.util.MapID;
 import JLUDesignPattern.map.util.MapMgr;
@@ -14,10 +16,11 @@ public class App {
         // 确定使用的Map工厂
         MapFactory mapFac = MapFactory.INSTANCE;
         // 确定使用的Block工厂
-        BlockFactory blockFac = BlockFactory.INSTANCE;
+//        IBlockFactory blockFac = BlockFactory.INSTANCE;
+        IBlockFactory blockFac = BlockProtoFactory.getInstance( );
         // 加载地图
-//        MapMgr.INSTANCE.setActiveMap( MapID.TOWN_MAP, mapFac, blockFac);
-        MapMgr.INSTANCE.setActiveMap( MapID.CITY_MAP, mapFac, blockFac);
+        MapMgr.INSTANCE.setActiveMap( MapID.TOWN_MAP, mapFac, blockFac);
+//        MapMgr.INSTANCE.setActiveMap( MapID.CITY_MAP, mapFac, blockFac);
         PlayerMgr.getInstance( ).resetPlayers( 2 );
 
     }

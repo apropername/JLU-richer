@@ -9,11 +9,7 @@ public class BarBlock extends Block {
     public boolean enterBy(Player player) {
         return false; //被阻拦，停止移动
     }
-    
-    @Override
-    public Block clone() {
-        return null;
-    }
+
 
 
     @Override

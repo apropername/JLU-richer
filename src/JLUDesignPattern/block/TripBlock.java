@@ -11,11 +11,6 @@ public class TripBlock extends Block {
         return true;
     }
 
-    /*@Override
-    public Block clone() {
-        return null;
-    }*/
-
     @Override
     protected char content(){
         return 'C';

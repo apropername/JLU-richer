@@ -9,11 +9,6 @@ public class MoneyBlock extends Block {
     public boolean enterBy(Player player) {
         player.addMoney( 100 );
         return true;    }
-/*
-    @Override
-    public Block clone() {
-        return null;
-    }*/
 
     @Override
     protected char content() {
