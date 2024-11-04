@@ -2,7 +2,6 @@ package JLUDesignPattern;
 
 import java.util.Scanner;
 
-import static JLUDesignPattern.ClearScreen.clearScreen;
 
 public class IO {
     private static Scanner scanner = new Scanner(System.in);
@@ -20,7 +19,9 @@ public class IO {
         return digital;
     }
     public static void cls( ) {
-        clearScreen();
+        // 使用 ANSI escape code 清屏
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     // Print single value

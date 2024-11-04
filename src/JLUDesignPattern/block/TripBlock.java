@@ -17,7 +17,7 @@ public class TripBlock extends Block {
     }*/
 
     @Override
-    protected void drawText(){
-        IO.print(" C ");
+    protected char content(){
+        return 'C';
     }
 }

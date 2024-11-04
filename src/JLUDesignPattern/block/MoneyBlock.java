@@ -16,7 +16,7 @@ public class MoneyBlock extends Block {
     }*/
 
     @Override
-    protected void drawText() {
-        IO.print(" B ");
+    protected char content() {
+        return 'B';
     }
 }

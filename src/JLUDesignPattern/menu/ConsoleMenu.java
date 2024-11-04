@@ -4,7 +4,6 @@ import JLUDesignPattern.IO;
 
 import java.io.*;
 
-import static JLUDesignPattern.ClearScreen.clearScreen;
 
 
 abstract class ConsoleMenu extends Menu {
@@ -22,7 +21,7 @@ abstract class ConsoleMenu extends Menu {
     protected abstract boolean doAction(int choice);
     protected abstract void display();
 
-    protected int selectMenuItem() throws IOException {
+    private int selectMenuItem() throws IOException {//原文当中是protected，这里我认为private就够了
         return IO.readDigital();
     }
 

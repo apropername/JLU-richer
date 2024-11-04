@@ -6,13 +6,13 @@ import JLUDesignPattern.block.Block;
 import java.util.ArrayList;
 import java.util.Random;
 
-//@Data
 public abstract class Player implements IPlayer {
     public abstract char flagChar(Dir d); //不同类型Player的显
+    protected int decideSteps() {
+        return 1;
+    }  //缺省只走1步,子类不同值.因为player还是个抽象类所以这个方法其实用不到,把它改成abstract也可以
 
-    public abstract boolean advance();
-
-    public void forceAdvance() {
+    final public void forceAdvance() {
         // 确定移动步数
         int steps = decideSteps();
         boolean goon = true;
@@ -22,11 +22,8 @@ public abstract class Player implements IPlayer {
         }
     } //强制必须前进
 
-    protected int decideSteps() {
-        return 1;
-    }  //缺省只走1步,子类不同值
 
-    protected boolean moveStep() {
+    private boolean moveStep() {//todo :change to private is ok?
         //确定移动方向
         Dir dir = decideMoveDir();
         // 取得目标Block
@@ -39,7 +36,7 @@ public abstract class Player implements IPlayer {
     } //向前移动一步. 不能继续前进，返回false
 
     ; //确定下一步前进方向
-    protected Dir decideMoveDir() {
+    private Dir decideMoveDir() {//todo :change to private is ok?
         // 取得所有可用方向(不含进入方向)，放入vector-dirs中
         ArrayList<Dir> dirs = new ArrayList<>();
         for ( int i = 0; i < Dir.TOTAL_COUNT; i++ ) {

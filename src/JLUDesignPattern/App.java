@@ -24,7 +24,7 @@ public class App {
 
     public void run() {
         boolean running = true;
-        while (running) {
+        while (running) {//todo 状态模式
             Menu pMenu = MenuMgr.getInstance().activedMenu();
             running = pMenu.process();
         }

@@ -72,7 +72,7 @@ public enum PlayerMgr {
         }
         return found;
     }
-    public void    startRound( ) {
+    public void startRound( ) {
         // 一直前进，直到遇到下一个UserPlayer
         boolean goon = mActivePlayer.advance( );;
         while ( goon ) {

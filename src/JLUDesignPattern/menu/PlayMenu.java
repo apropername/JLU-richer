@@ -8,13 +8,12 @@ import JLUDesignPattern.map.util.MapMgr;
 import JLUDesignPattern.menu.util.MenuMgr;
 import JLUDesignPattern.menu.util.MenuType;
 
-import static JLUDesignPattern.ClearScreen.clearScreen;
 import static JLUDesignPattern.menu.util.MenuType.*;
 
 public class PlayMenu extends ConsoleMenu {
     @Override
     protected void display() {
-        clearScreen();
+        IO.cls();
         // 显示界面
         MapMgr.INSTANCE.activedMap().show( );
         // 显示菜单

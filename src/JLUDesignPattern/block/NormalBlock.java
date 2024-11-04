@@ -17,7 +17,7 @@ public class NormalBlock extends Block {
 */
 
     @Override
-    protected void drawText() {
-        IO.print(" A ");
+    protected char content() {
+        return 'A';
     }
 }
