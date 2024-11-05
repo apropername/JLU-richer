@@ -10,29 +10,38 @@ public enum MenuFactory implements IMenuFactory {
     @Override
     public Menu createMenu(MenuType menuType) {
         switch (menuType) {
-            case MAIN_MENU -> {return new MainMenu();
+            case MAIN_MENU -> {
+                return new MainMenu();
             }
-            case NEW_MENU -> {return new NewMenu();
+            case NEW_MENU -> {
+                return new NewMenu();
             }
-            case LOAD_MENU -> {return new LoadMenu();
+            case LOAD_MENU -> {
+                return new LoadMenu();
             }
-            case OPTION_MENU -> {return new OptionMenu();
+            case OPTION_MENU -> {
+                return new OptionMenu();
             }
-            case PLAY_MENU -> {return new PlayMenu();
+            case PLAY_MENU -> {
+                return new PlayMenu();
             }
-            case SAVE_MENU -> {return new SaveMenu();
+            case SAVE_MENU -> {
+                return new SaveMenu();
             }
-            case PAUSE_MENU -> {return new PauseMenu();
+            case PAUSE_MENU -> {
+                return new PauseMenu();
             }
-            case ANIMATE_MENU -> {return new AnimateMenu();
+            case ANIMATE_MENU -> {
+                return new AnimateMenu();
             }
-            case MUSIC_MENU -> {return new MusicMenu();
+            case MUSIC_MENU -> {
+                return new MusicMenu();
             }
-            case PLAYER_COUNT_MENU -> {return new PlayerCountMenu();
+            case PLAYER_COUNT_MENU -> {
+                return new PlayerCountMenu();
             }
-            case DIFFICULTY_MENU -> {return new DifficultyMenu();
-            }
-            case null, default -> {assert false;
+            case DIFFICULTY_MENU -> {
+                return new DifficultyMenu();
             }
         }
         return null;

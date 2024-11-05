@@ -19,8 +19,8 @@ public class App {
 //        IBlockFactory blockFac = BlockFactory.INSTANCE;
         IBlockFactory blockFac = BlockProtoFactory.getInstance( );
         // 加载地图
-        MapMgr.INSTANCE.setActiveMap( MapID.TOWN_MAP, mapFac, blockFac);
-//        MapMgr.INSTANCE.setActiveMap( MapID.CITY_MAP, mapFac, blockFac);
+//        MapMgr.INSTANCE.setActiveMap( MapID.TOWN_MAP, mapFac, blockFac);
+        MapMgr.INSTANCE.setActiveMap( MapID.CITY_MAP, mapFac, blockFac);
         PlayerMgr.getInstance( ).resetPlayers( 2 );
 
     }

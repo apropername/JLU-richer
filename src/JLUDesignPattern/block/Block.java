@@ -5,6 +5,9 @@ import JLUDesignPattern.Player.util.Dir;
 import JLUDesignPattern.Player.Player;
 import JLUDesignPattern.Player.util.PlayerMgr;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 import static JLUDesignPattern.Player.util.Dir.LEFT;
 import static JLUDesignPattern.Player.util.Dir.RIGHT;
 
@@ -29,8 +32,12 @@ public abstract class Block implements IBlock , Cloneable {
 
     public Block clone( ) throws CloneNotSupportedException {//todo 函数体内try throw catch 和签名上throws有什么不同
         Block clone = (Block) super.clone();
+        clone.mNeighbors = new Block[ Dir.TOTAL_COUNT ];
+        /*
         for ( var pB : clone.mNeighbors )//这下体会到对象可互相访问的方便了
         {pB = null;}
+        */
+
         //X，Y之后都会被set
         return clone;
     }

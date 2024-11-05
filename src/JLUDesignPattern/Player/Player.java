@@ -12,7 +12,7 @@ public abstract class Player implements IPlayer {
         return 1;
     }  //缺省只走1步,子类不同值.因为player还是个抽象类所以这个方法其实用不到,把它改成abstract也可以
 
-    final public void forceAdvance() {
+    final public void forceAdvance() {//final是按理解自己加的，todo 感觉forceAdvance和advance职责不明
         // 确定移动步数
         int steps = decideSteps();
         boolean goon = true;

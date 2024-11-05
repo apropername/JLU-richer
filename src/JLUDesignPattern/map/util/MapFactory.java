@@ -68,7 +68,7 @@ public enum MapFactory implements IMapFactory {
         final var enumValues=BlockType.class.getEnumConstants();//todo:想不这么麻烦只能改变data容器声明的类型
         for ( var row : MAPData ) {
             Block b = fac.createBlock(enumValues[row.get(1)]);
-            b.setXY(row.get(6), row.get(7));
+            b.setXY(row.get(7), row.get(8));
             map.addBlock( b );
         }
         // 遍历各Blcok，并指定邻居

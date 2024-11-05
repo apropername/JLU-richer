@@ -42,7 +42,7 @@ public enum PlayerMgr {
     public ArrayList<Player>  getAllPlayers( )  { return mPlayers; }
     public void  addPlayer( Player p ) { mPlayers.add(p); }
     public Player getActivePlayer( )  { return mActivePlayer; }
-    public void   setActivePlayer( Player player ) { mActivePlayer = player; }
+    public void   setActivePlayer( Player player ) { mActivePlayer = player; }//todo:可以推测单独封装成一个public函数是为了为外界提供接口,但目前没有用到
     
     // 激活下一个
     public Player nextPlayer( ){
