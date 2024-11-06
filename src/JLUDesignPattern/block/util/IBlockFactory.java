@@ -5,5 +5,4 @@ import JLUDesignPattern.block.Block;
 
 public interface IBlockFactory {
     Block createBlock(BlockType type);
-
 }

@@ -4,16 +4,17 @@ import JLUDesignPattern.IO;
 import JLUDesignPattern.block.Block;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public  class Map implements IMap {
-    private ArrayList<Block> mBlocks=new ArrayList<>();//todo:compare to List<> declare?
-    public ArrayList<Block> getBlocks() {return mBlocks;}//ArrayList is closest
+    private List<Block> mBlocks=new ArrayList<>();
+    public List<Block> getBlocks() {return mBlocks;}//ArrayList is closest
     public Block getBlockByIndex( int index )  { return mBlocks.get(index); }
     public void addBlock( Block p ) { mBlocks.add( p ); }
 
     @Override
     public void show() {
-    //决定坐标如何表现，在终端控制台上就是 打印空白符.应该是耦合了地图模板要求mBlocks从前到后只能是 向下或向右
+    //决定坐标/布局 如何表现，在终端控制台上就是 打印空白符.todo 因为在 输出流打印 所以耦合mBlocks所存有从左到右且从上到下的顺序，可以做排序来消除耦合
         IO.print("\n" );
         int lastX = 1;
         int lastY = 0;
