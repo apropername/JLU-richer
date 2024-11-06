@@ -1,16 +1,33 @@
-package JLUDesignPattern.map.util;
+package JLUDesignPattern;
 
 import JLUDesignPattern.Player.util.Dir;
-import JLUDesignPattern.block.Block;
+import JLUDesignPattern.block.*;
 import JLUDesignPattern.block.util.BlockType;
 import JLUDesignPattern.block.util.IBlockFactory;
 import JLUDesignPattern.map.Map;
+import JLUDesignPattern.map.util.MapID;
+import JLUDesignPattern.menu.*;
+import JLUDesignPattern.menu.util.MenuType;
 
 import java.util.List;
 
-public enum MapFactory implements IMapFactory {
-    INSTANCE;
-    public Map myCreateMap(List<List<Integer>> mapData, IBlockFactory fac) {
+public class ConsoleFactory implements AbstractFactory {
+    private static final ConsoleFactory instance=new ConsoleFactory();
+    public static ConsoleFactory getInstance() {
+        return instance;
+    }
+    @Override
+    public Block createBlock(BlockType type) {
+        return switch (type) {
+            case NORMAL_BLOCK -> new NormalBlock();
+            case MONEY_BLOCK -> new MoneyBlock();
+            case TRIP_BLOCK -> new TripBlock();
+            case BAR_BLOCK -> new BarBlock();
+        };
+    }
+
+    @Override
+    public Map createMap(List<List<Integer>> mapData, IBlockFactory fac) {
         Map map = new Map( );
         final var enumValues=BlockType.class.getEnumConstants();//todo:想不这么麻烦只能改变data容器声明的类型
         for ( var row : mapData ) {
@@ -42,15 +59,21 @@ public enum MapFactory implements IMapFactory {
         }
         return map;
     }
-    private MapDataSelector mapDataSelector;//因为实在不适合遵循文档使用建造者模式，所以将容易变化的 分支选择地图数据 分离到单独一个类中，当新增地图数据时则继承之并重写selectDataByID
-    public void setMapDataSelector(MapDataSelector mapDataSelector) {
-        this.mapDataSelector = mapDataSelector;
-    }
 
-    @Override//尽力不修改接口，所以下面这个函数看上去才这么没必要
-    public Map createMap(MapID id, IBlockFactory fac) {//MapID相当于地图的模板即每个地块的位置 ，IBlockFactory决定了最终每个地块被怎样表示
-        //这个方法的作用就是按照参数生成并排列地块、形成地图
-        assert mapDataSelector != null;
-        return myCreateMap(mapDataSelector.selectDataByID(id),fac);
+    @Override
+    public Menu createMenu(MenuType menuType) {
+        return switch (menuType) {
+            case MAIN_MENU -> new MainMenu();
+            case NEW_MENU -> new NewMenu();
+            case LOAD_MENU -> new LoadMenu();
+            case OPTION_MENU -> new OptionMenu();
+            case PLAY_MENU -> new PlayMenu();
+            case SAVE_MENU -> new SaveMenu();
+            case PAUSE_MENU -> new PauseMenu();
+            case ANIMATE_MENU -> new AnimateMenu();
+            case MUSIC_MENU -> new MusicMenu();
+            case PLAYER_COUNT_MENU -> new PlayerCountMenu();
+            case DIFFICULTY_MENU -> new DifficultyMenu();
+        };
     }
 }

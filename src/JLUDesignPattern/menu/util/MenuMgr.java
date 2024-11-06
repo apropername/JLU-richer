@@ -1,5 +1,6 @@
 package JLUDesignPattern.menu.util;
 
+import JLUDesignPattern.ConsoleFactory;
 import JLUDesignPattern.menu.*;
 
 import java.util.EnumMap;
@@ -15,7 +16,7 @@ public class MenuMgr {
     private MenuMgr() {
 
         for(MenuType menuType : MenuType.values()) {//todo:其实当前放在构造函数中，有背文档指示
-            mMapMenus.put(menuType,MenuFactory.INSTANCE.createMenu(menuType));
+            mMapMenus.put(menuType, ConsoleFactory.getInstance().createMenu(menuType));
         }
 
         setActivedMenu(MAIN_MENU);
