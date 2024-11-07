@@ -1,6 +1,6 @@
 package JLUDesignPattern.menu;
 
-public abstract class Menu implements IMenu {//todo 状态模式
+public abstract class Menu implements IMenu {
     @Override
     abstract public boolean process();
 }

@@ -1,16 +1,21 @@
 package JLUDesignPattern;
 
 import JLUDesignPattern.Player.util.PlayerMgr;
-import JLUDesignPattern.block.util.BlockFactory;
 import JLUDesignPattern.block.util.BlockProtoFactory;
 import JLUDesignPattern.block.util.IBlockFactory;
 import JLUDesignPattern.map.util.*;
-import JLUDesignPattern.menu.Menu;
-import JLUDesignPattern.menu.util.MenuMgr;
 
 
 public class App {
+    private GameState gameState;
+    public void changeState(GameState state) {
+        gameState = state;
+    }
     public void init() {
+        Welcome.INSTANCE.setContext(this);
+        Playing.INSTANCE.setContext(this);
+        changeState(Welcome.INSTANCE);
+
         // 确定使用的Map工厂
         MapFactory mapFac = MapFactory.INSTANCE;
         MapFactory.INSTANCE.setMapDataSelector(new MapDataSelector());
@@ -29,11 +34,10 @@ public class App {
     }
 
     public void run() {
-        boolean running = true;
-        while (running) {//todo 状态模式
-            Menu pMenu = MenuMgr.getInstance().activedMenu();
-            running = pMenu.process();
-        }
+        do{
+            gameState.process();
+        }while(gameState!= GameOver.INSTANCE);
+        gameState.process();
     }
 
     public void term() {

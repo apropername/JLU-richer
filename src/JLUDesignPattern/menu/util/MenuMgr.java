@@ -14,7 +14,7 @@ public class MenuMgr {
     private final Map<MenuType, Menu> mMapMenus = new EnumMap<>(MenuType.class);
     private MenuMgr() {
 
-        for(MenuType menuType : MenuType.values()) {//todo:其实当前放在构造函数中，有背文档指示
+        for(MenuType menuType : MenuType.values()) {//todo:当前初始化放在构造函数中，有背文档指示
             mMapMenus.put(menuType,MenuFactory.INSTANCE.createMenu(menuType));
         }
 
