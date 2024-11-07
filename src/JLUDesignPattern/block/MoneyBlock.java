@@ -7,7 +7,7 @@ import JLUDesignPattern.Player.Player;
 public class MoneyBlock extends Block {
     @Override
     public boolean enterBy(Player player) {
-        player.addMoney( 100 );
+        player.getImp().addMoney( 100 );
         return true;    }
 
     @Override

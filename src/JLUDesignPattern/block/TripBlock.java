@@ -7,7 +7,7 @@ import JLUDesignPattern.Player.Player;
 public class TripBlock extends Block {
     @Override
     public boolean enterBy(Player player) {
-        player.addHp( -15 );
+        player.getImp().addHp( -15 );
         return true;
     }
 

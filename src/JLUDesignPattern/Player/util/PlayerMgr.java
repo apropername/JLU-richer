@@ -1,8 +1,8 @@
 package JLUDesignPattern.Player.util;
 
-import JLUDesignPattern.Player.AutoPlayer;
+import JLUDesignPattern.Player.AutoPlayerImp;
 import JLUDesignPattern.Player.Player;
-import JLUDesignPattern.Player.UserPlayer;
+import JLUDesignPattern.Player.UserPlayerImp;
 import JLUDesignPattern.block.Block;
 import JLUDesignPattern.map.util.MapMgr;
 import java.util.ArrayList;
@@ -23,16 +23,16 @@ public enum PlayerMgr {
         Block firstBlock = MapMgr.getInstance( ).activedMap( ).getBlockByIndex( 0 );
         //建立全部玩家
         for ( int i = 0; i < num; i++ ) {
-            Player player = null;
+            Player player = new Player();
             if ( i == num - 1 ) {
                 //最后一个是用户玩家 todo:目前看来只是口头约定，没有机制表明
-                player = new UserPlayer( );
+                player.setImp(new UserPlayerImp());
             } else {
-                player = new AutoPlayer( );
+                player.setImp(new AutoPlayerImp());
             }
-            player.setName( names[ i ] );
+            player.getImp().setName( names[ i ] );
             //设置Player的初始位置
-            player.setStand( Dir.UNKNOWN, firstBlock );
+            player.getImp().setStand( Dir.UNKNOWN, firstBlock );
             mPlayers.add( player );
         }
         //当前Player,为第一个
@@ -66,14 +66,14 @@ public enum PlayerMgr {
         Player  found = null;
         // 若多个玩家站Block，返回UserPlayer todo:也只是口头规范
         for ( var  player : mPlayers ) {
-            if ( player.getStand() == block ) {
+            if ( player.getImp().getStand() == block ) {
                 found = player;//原cpp代码player.get()之谜
             }
         }
         return found;
     }
     public void startRound( ) {
-        // 一直前进，直到遇到下一个UserPlayer
+        // 从firstAutoPlayer开始依次前进，直到遇到下一个UserPlayer
         boolean goon = mActivePlayer.advance( );;
         while ( goon ) {
             nextPlayer( );

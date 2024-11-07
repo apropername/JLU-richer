@@ -27,7 +27,7 @@ public class PlayMenu extends ConsoleMenu {
         } else if (choice == 1) {
             Player player = PlayerMgr.getInstance( ).getActivePlayer( );//因为startRound的停止条件,总是UserPlayer,
             player.forceAdvance( ); //强制UserPlayer前进
-            //设置下一个为AcivePlayer
+            //设置下一个(firstAutoPlayer)为ActivePlayer
             PlayerMgr.getInstance( ).nextPlayer( );
             //继续开始新一轮前进   目前就是让电脑玩家即其它所有玩家走完
             PlayerMgr.getInstance( ).startRound();
