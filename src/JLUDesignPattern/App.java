@@ -4,6 +4,9 @@ import JLUDesignPattern.Player.util.PlayerMgr;
 import JLUDesignPattern.block.util.BlockProtoFactory;
 import JLUDesignPattern.block.util.IBlockFactory;
 import JLUDesignPattern.map.util.*;
+import JLUDesignPattern.menu.Menu;
+import JLUDesignPattern.menu.util.IMenuFactory;
+import JLUDesignPattern.menu.util.MenuMgr;
 
 
 public class App {
@@ -17,18 +20,16 @@ public class App {
         changeState(Welcome.INSTANCE);
 
         // 确定使用的Map工厂
-        MapFactory mapFac = MapFactory.INSTANCE;
-        MapFactory.INSTANCE.setMapDataSelector(new MapDataSelector());
+        IMapFactory mapFac = ConsoleFactory.getInstance( );
         // 确定使用的Block工厂
-//        IBlockFactory blockFac = BlockFactory.INSTANCE;
         IBlockFactory blockFac = BlockProtoFactory.getInstance( );
-        // 加载地图
-//        MapMgr.INSTANCE.setActiveMap( MapID.TOWN_MAP, mapFac, blockFac);
+//        IBlockFactory blockFac = ConsoleFactory.getInstance( );
 
-/*        MapMgr.INSTANCE.setActiveMap( MapID.CITY_MAP, mapFac, blockFac);//myTEST
-        MapFactory.INSTANCE.setMapDataSelector(new MapDataSelectorTest());//myTEST
-        */
-        MapMgr.INSTANCE.setActiveMap( MapID.CITY_MAP, mapFac, blockFac);
+        // 加载地图
+        MapMgr.INSTANCE.setActiveMap( MapID.TOWN_MAP, mapFac, blockFac);
+//        MapMgr.INSTANCE.setActiveMap( MapID.CITY_MAP, mapFac, blockFac);
+
+
         PlayerMgr.getInstance( ).resetPlayers( 2 );
 
     }
